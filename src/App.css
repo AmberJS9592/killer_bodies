@@ -1,38 +1,165 @@
-.App {
-  text-align: center;
+/*Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Raleway:wght@400;500;600;700;900&display=swap');
+
+
+
+
+
+/* Global Variable */
+
+:root{
+    --main:#f99203;
+    --black:#000;
+    --white:#fff;
+    --font_family:"Besley",Raleway;
+
+}
+*{
+    transition: 0.3s;
+    font-family: var(--font_family);
+}
+*::selection{
+    background: var(--main);
+    color: var(--white) !important;
+}
+html::-webkit-scrollbar{
+    width: 0.5vw;
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--main);
+}
+html::-webkit-scrollbar-track{
+    background: var(--black);
+}
+.btn{
+width: 20vw;
+border: 0.5vw solid var(--main);
+color: var(--main) !important;
+border-radius: 2vw;
+position: relative;
+z-index: 1;
+}
+.btn:hover{
+    color: var(--white) !important;
+}
+.btn::after{
+    content: "";
+    background: var(--main);
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 0.01vw;
+    top: 0;
+    left: 0;
+    border-radius: 2vw;  
+    transition: 0.3s; 
+    z-index: -1;
+}
+.btn:hover::after{
+    width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*Navbar*/
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 0.2vw solid var(--white);
+}
+.navbar-brand{
+    font-size: 3vw;
+    color: var(--white) !important;
+    padding: 0px 0 0 60px;
+    font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar-brand span{
+    font-size: 3.7vw;
+    color: var(--main) !important;
+    font-weight: 700;
+    
+}
+.navbar.active{
+    background: var(--black);
+}
+.navbar.scroll{
+    background-color: var(--black);
+}
+.nav-link{
+    color: var(--white) !important;
+    margin-left: 8px;
+    font-size: 1.5vw;
+    font-weight: 500;
+}
+.nav-link:hover{
+    color: var(--main) !important;
+}
+.nav-link::after{
+    content: "";
+    background: var(--main);
+    height: 2px;
+    width: 0px;
+    display: block;
+    position: absolute;
+    transition: 0.3s;
+}
+.nav-link:hover::after{
+    width: 40px;
+}
+@media screen and (max-width: 620px) {
+    .navbar-nav {
+        display: none;
+    }
+   nav img.menu {
+        display: block;
+        src: "../images/menu.png";
+
+    }
+    
+}
+img.menu{
+    display: none;
+    width: 38px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Header */
+.headerImg img{
+    width: 100vw;
 }
 
-.App-link {
-  color: #61dafb;
+.header .Content{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--white) !important;
+    background: var(--black);
+    padding: 1vw;
+    margin-top: 80%;
+}
+.header .Content h6{
+    font-size: 4vw;
+}
+.header .btn{
+    margin-top: 2vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*Custom Section*/
+.custom {
+    margin: 15% auto;
+}
+.custom .box{
+    overflow: hidden;
+}
+.custom img{
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    cursor: pointer;
+    overflow: hidden;
+}
+.custom img:hover{
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
 }
