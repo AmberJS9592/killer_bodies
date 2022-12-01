@@ -63,7 +63,7 @@ z-index: 1;
 .navbar{
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 1vw;
     border-bottom: 0.2vw solid var(--white);
 }
 .navbar-brand{
@@ -97,8 +97,8 @@ z-index: 1;
 .nav-link::after{
     content: "";
     background: var(--main);
-    height: 2px;
-    width: 0px;
+    height: 0.5vw;
+    width: 0vw;
     display: block;
     position: absolute;
     transition: 0.3s;
@@ -119,12 +119,12 @@ z-index: 1;
 }
 img.menu{
     display: none;
-    width: 38px;
+    width: 5vw;
 }
 
 /* Header */
 .headerImg img{
-    width: 100vw;
+    width: 100%;
 }
 
 .header .Content{
@@ -151,9 +151,12 @@ img.menu{
 }
 .custom .box{
     overflow: hidden;
+    
 }
 .custom img{
-    height: 100%;
+    height: 10%;
+    display: block;
+    padding: 1vw;
     -o-object-fit: cover;
     object-fit: cover;
     cursor: pointer;
